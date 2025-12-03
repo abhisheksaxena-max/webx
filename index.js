@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req,res)=>{
-  console.log('welcome to webx');
+ res.send("WELCOME TO WEBX API");
 })
 
 app.use('/zoom', zoomRoute)
