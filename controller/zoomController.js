@@ -38,7 +38,7 @@ const zoomCallback = async (req, res) => {
     const zoomAccessToken = tokenResponse.data.access_token;
     const zoomRefreshToken = tokenResponse.data.refresh_token;
 
-    console.log(tokenResponse);
+    // console.log(tokenResponse);
 
     res.json({
       accessToken: zoomAccessToken,
@@ -51,20 +51,22 @@ const zoomCallback = async (req, res) => {
     res.status(500).send("Failed to get access token");
   }
 };
-
 const zoomRefresh = async (req, res) => {
-  const { zoomRefreshToken } = req.body;
+  const { refresh_token } = req.query; 
 
-  if (!zoomRefreshToken) return res.send("No refresh token available");
+  if (!refresh_token) {
+    return res.status(400).json({ message: "No refresh token provided" });
+  }
 
   try {
+    // Request new access token from Zoom
     const tokenResponse = await axios.post(
       "https://zoom.us/oauth/token",
-      null,
+      null, 
       {
         params: {
           grant_type: "refresh_token",
-          refresh_token: zoomRefreshToken,
+          refresh_token: refresh_token, 
         },
         auth: {
           username: process.env.ZOOM_CLIENT_ID,
@@ -73,9 +75,11 @@ const zoomRefresh = async (req, res) => {
       }
     );
 
-    zoomAccessToken = tokenResponse.data.access_token;
-    zoomRefreshToken = tokenResponse.data.refresh_token;
-    console.log(zoomAccessToken);
+    // Update your in-memory tokens
+    const zoomAccessToken = tokenResponse.data.access_token;
+    const zoomRefreshToken = tokenResponse.data.refresh_token;
+
+    // console.log("Zoom token response:", tokenResponse.data);
 
     res.json({
       accessToken: zoomAccessToken,
@@ -83,8 +87,8 @@ const zoomRefresh = async (req, res) => {
       message: "Zoom access token refreshed successfully!",
     });
   } catch (err) {
-    console.error(err.response?.data);
-    res.status(500).send("Failed to refresh access token");
+    console.error("Zoom token refresh error:", err.response?.data || err.message);
+    res.status(500).json({ message: "Failed to refresh access token" });
   }
 };
 
