@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/connect',zoomConnect)
 router.get('/oauth/callback',zoomCallback)
 router.get('/refresh',zoomRefresh)
-router.post('/registar-webinar',zoomRegisterWebinar)
+router.post('/register-webinar',zoomRegisterWebinar)
 router.get('/participants',zoomParticipants)
 router.get('/webinar/merged-report',zoomMergedReport)
 
