@@ -149,7 +149,7 @@ const zoomRegisterWebinar = async (req, res) => {
 
 const zoomParticipants = async (req, res) => {
   try {
-    const { webinarId } = req.body;
+    const { webinarId } = req.query;
 
     if (!webinarId) {
       return res.status(400).json({ error: "webinarId is required" });
