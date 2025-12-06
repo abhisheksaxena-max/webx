@@ -13,8 +13,6 @@ const zoomConnect = (req, res) => {
 };
 
 const zoomCallback = async (req, res) => {
-  console.log(req.query);
-
   const code = req.query.code;
   if (!code) return res.send("No code received from Zoom");
 
@@ -38,8 +36,6 @@ const zoomCallback = async (req, res) => {
     const zoomAccessToken = tokenResponse.data.access_token;
     const zoomRefreshToken = tokenResponse.data.refresh_token;
 
-    // console.log(tokenResponse);
-
     res.json({
       accessToken: zoomAccessToken,
       refreshToken: zoomRefreshToken,
@@ -52,7 +48,7 @@ const zoomCallback = async (req, res) => {
   }
 };
 const zoomRefresh = async (req, res) => {
-  const { refresh_token } = req.query; 
+  const { refresh_token } = req.query;
 
   if (!refresh_token) {
     return res.status(400).json({ message: "No refresh token provided" });
@@ -62,11 +58,11 @@ const zoomRefresh = async (req, res) => {
     // Request new access token from Zoom
     const tokenResponse = await axios.post(
       "https://zoom.us/oauth/token",
-      null, 
+      null,
       {
         params: {
           grant_type: "refresh_token",
-          refresh_token: refresh_token, 
+          refresh_token: refresh_token,
         },
         auth: {
           username: process.env.ZOOM_CLIENT_ID,
@@ -79,34 +75,47 @@ const zoomRefresh = async (req, res) => {
     const zoomAccessToken = tokenResponse.data.access_token;
     const zoomRefreshToken = tokenResponse.data.refresh_token;
 
-    // console.log("Zoom token response:", tokenResponse.data);
-
     res.json({
       accessToken: zoomAccessToken,
       refreshToken: zoomRefreshToken,
       message: "Zoom access token refreshed successfully!",
     });
   } catch (err) {
-    console.error("Zoom token refresh error:", err.response?.data || err.message);
+    console.error(
+      "Zoom token refresh error:",
+      err.response?.data || err.message
+    );
     res.status(500).json({ message: "Failed to refresh access token" });
   }
 };
 
 const zoomRegisterWebinar = async (req, res) => {
   try {
-    const { email, first_name, last_name, phone_number, webinarId } = req.body;
+    const {
+      email,
+      first_name,
+      last_name,
+      phone_number,
+      webinarId,
+      occurrence_id,
+    } = req.body;
+
     if (!webinarId) {
       return res.status(400).json({ error: "webinarId is required" });
     }
-    const authHeader = req.headers.authorization;
 
+    if (!occurrence_id) {
+      return res.status(400).json({ error: "occurrence_id is required" });
+    }
+
+    const authHeader = req.headers.authorization;
     if (!authHeader) {
       return res.status(401).json({ error: "Zoom token missing in headers" });
     }
 
-    // Send to Zoom
+    // Register user for the specific occurrence
     const zoomRes = await axios.post(
-      `https://api.zoom.us/v2/webinars/${webinarId}/registrants`,
+      `https://api.zoom.us/v2/webinars/${webinarId}/registrants?occurrence_ids=${occurrence_id}`,
       {
         email,
         first_name,
@@ -120,30 +129,40 @@ const zoomRegisterWebinar = async (req, res) => {
     const data = zoomRes.data;
     console.log("Zoom response: ", data);
 
-    const {
-      registrant_id,
-      id, // webinar id
-      topic,
-      start_time,
-      join_url,
-    } = data;
+    let startTime = null;
 
+    if (data.occurrences && Array.isArray(data.occurrences)) {
+      const matched = data.occurrences.find(
+        (occ) => occ.occurrence_id === occurrence_id
+      );
+
+      if (matched) {
+        startTime = matched.start_time;
+      }
+    }
+
+    // Fallback: not found
+    if (!startTime) {
+      startTime = data.start_time; // fallback to main webinar time
+    }
+
+    // Save to DB
     const registerUser = await createUserRegistration(
       email,
       first_name,
       last_name,
       phone_number,
-      String(id),
-      registrant_id,
-      topic,
-      start_time,
-      join_url
+      String(data.id),
+      data.registrant_id,
+      data.topic,
+      startTime,
+      data.join_url
     );
 
-    res.json(registerUser);
+    return res.json(registerUser);
   } catch (error) {
     console.error(error.response?.data || error);
-    res.status(500).send("Failed to register user");
+    return res.status(500).send("Failed to register user");
   }
 };
 
@@ -213,6 +232,54 @@ const zoomMergedReport = async (req, res) => {
   }
 };
 
+const getZoomOccurrences = async (req, res) => {
+  try {
+    const { webinarId } = req.query;
+
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader) {
+      return res.status(401).json({ error: "Zoom token missing in headers" });
+    }
+
+    // Fetch webinar details from Zoom
+    const response = await axios.get(
+      `https://api.zoom.us/v2/webinars/${webinarId}`,
+      {
+        headers: {
+          Authorization: authHeader,
+        },
+      }
+    );
+
+    const occurrences = response.data.occurrences || [];
+
+    // Convert occurrences to a clean format for frontend
+    const formatted = occurrences.map((occ) => {
+      const dateObj = new Date(occ.start_time);
+
+      return {
+        occurrence_id: occ.occurrence_id,
+        date: dateObj.toISOString().split("T")[0],
+        time: dateObj.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        }),
+        start_time: occ.start_time, // Keep original ISO
+      };
+    });
+
+    res.json({
+      webinarId,
+      occurrences: formatted,
+    });
+  } catch (err) {
+    console.error(err.response?.data || err);
+    res.status(500).json({ error: "Failed to get occurrences" });
+  }
+};
+
 module.exports = {
   zoomConnect,
   zoomCallback,
@@ -220,4 +287,5 @@ module.exports = {
   zoomRegisterWebinar,
   zoomParticipants,
   zoomMergedReport,
+  getZoomOccurrences,
 };
