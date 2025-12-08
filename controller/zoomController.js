@@ -101,12 +101,12 @@ const zoomRegisterWebinar = async (req, res) => {
       first_name,
       last_name,
       phone_number,
-      webinarId,
+      webinar_id,
       occurrence_id,
     } = req.body;
 
-    if (!webinarId) {
-      return res.status(400).json({ error: "webinarId is required" });
+    if (!webinar_id) {
+      return res.status(400).json({ error: "webinar_id is required" });
     }
 
     if (!occurrence_id) {
@@ -120,7 +120,7 @@ const zoomRegisterWebinar = async (req, res) => {
 
     // Register user for the specific occurrence
     const zoomRes = await axios.post(
-      `https://api.zoom.us/v2/webinars/${webinarId}/registrants?occurrence_ids=${occurrence_id}`,
+      `https://api.zoom.us/v2/webinars/${webinar_id}/registrants?occurrence_ids=${occurrence_id}`,
       {
         email,
         first_name,
@@ -173,10 +173,10 @@ const zoomRegisterWebinar = async (req, res) => {
 
 const zoomParticipants = async (req, res) => {
   try {
-    const { webinarId } = req.query;
+    const { webinar_id } = req.query;
 
-    if (!webinarId) {
-      return res.status(400).json({ error: "webinarId is required" });
+    if (!webinar_id) {
+      return res.status(400).json({ error: "webinar_id is required" });
     }
 
     const authHeader = req.headers.authorization;
@@ -187,7 +187,7 @@ const zoomParticipants = async (req, res) => {
 
     // Fetch participants from Zoom
     const zoomRes = await axios.get(
-      `https://api.zoom.us/v2/report/webinars/${webinarId}/participants`,
+      `https://api.zoom.us/v2/report/webinars/${webinar_id}/participants`,
       {
         headers: {
           Authorization: authHeader,
@@ -200,7 +200,7 @@ const zoomParticipants = async (req, res) => {
     const registerParticipants = [];
     for (const p of participants) {
       const register = await createZoomParticipant(
-        webinarId,
+        webinar_id,
         p.id,
         p.user_id,
         p.name,
@@ -239,7 +239,7 @@ const zoomMergedReport = async (req, res) => {
 
 const getZoomOccurrences = async (req, res) => {
   try {
-    const { webinarId } = req.query;
+    const { webinar_id } = req.query;
 
     const authHeader = req.headers.authorization;
 
@@ -249,7 +249,7 @@ const getZoomOccurrences = async (req, res) => {
 
     // Fetch webinar details from Zoom
     const response = await axios.get(
-      `https://api.zoom.us/v2/webinars/${webinarId}`,
+      `https://api.zoom.us/v2/webinars/${webinar_id}`,
       {
         headers: {
           Authorization: authHeader,
@@ -276,7 +276,7 @@ const getZoomOccurrences = async (req, res) => {
     });
 
     res.json({
-      webinarId,
+      webinar_id,
       occurrences: formatted,
     });
   } catch (err) {
