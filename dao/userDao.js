@@ -73,7 +73,9 @@ const getMergedWebinarData = async () => {
 
     participants.forEach((p) => {
       if (p.email && p.start_time) {
-        const key = `${p.email.toLowerCase()}_${new Date(p.start_time).getTime()}`;
+        const key = `${p.email.toLowerCase()}_${new Date(
+          p.start_time
+        ).getTime()}`;
         participantMap[key] = p;
       }
     });
@@ -97,7 +99,7 @@ const getMergedWebinarData = async () => {
         first_name: r.first_name,
         last_name: r.last_name,
         phone_number: r.phone_number,
-        status: participant?.status || "not_attended",  // From participant table
+        status: participant?.status || "not_attended", // From participant table
         registrant_id: r.registrant_id,
         webinar_id: r.webinar_id,
         topic: r.topic,
@@ -117,10 +119,46 @@ const getMergedWebinarData = async () => {
     throw error;
   }
 };
+const fetchToken = async () => {
+  try {
+    const tokenRow = await prisma.refresh_token.findFirst({
+      select: {
+        refresh_token: true,
+      },
+    });
 
+    return tokenRow?.refresh_token ?? null;
+  } catch (err) {
+    console.error("Failed to fetch refresh token:", err);
+    return null;
+  }
+};
+
+const saveToken = async (zoomRefreshToken) => {
+  try {
+    if (!zoomRefreshToken) return;
+
+    const first = await prisma.refresh_token.findFirst({
+      select: { id: true },
+    });
+
+    if (!first) return;
+
+    await prisma.refresh_token.update({
+      where: { id: first.id },
+      data: {
+        refresh_token: zoomRefreshToken,
+      },
+    });
+  } catch (error) {
+    console.error("Failed to update refresh token:", error);
+  }
+};
 
 module.exports = {
   createUserRegistration,
   createZoomParticipant,
   getMergedWebinarData,
+  fetchToken,
+  saveToken,
 };

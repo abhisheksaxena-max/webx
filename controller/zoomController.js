@@ -2,6 +2,8 @@ const {
   createUserRegistration,
   createZoomParticipant,
   getMergedWebinarData,
+  fetchToken,
+  saveToken,
 } = require("../dao/userDao");
 const axios = require("axios");
 
@@ -48,10 +50,12 @@ const zoomCallback = async (req, res) => {
   }
 };
 const zoomRefresh = async (req, res) => {
-  const { refresh_token } = req.query;
+  const refresh_token = await fetchToken();
 
   if (!refresh_token) {
-    return res.status(400).json({ message: "No refresh token provided" });
+    return res
+      .status(400)
+      .json({ message: "No refresh token is fetched from DB" });
   }
 
   try {
@@ -71,9 +75,10 @@ const zoomRefresh = async (req, res) => {
       }
     );
 
-    // Update your in-memory tokens
     const zoomAccessToken = tokenResponse.data.access_token;
     const zoomRefreshToken = tokenResponse.data.refresh_token;
+
+    await saveToken(zoomRefreshToken);
 
     res.json({
       accessToken: zoomAccessToken,

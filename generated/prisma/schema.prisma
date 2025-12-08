@@ -26,7 +26,6 @@ model registrant {
   topic         String
   start_time    DateTime
   registered_at DateTime
-  created_at    DateTime @default(now())
 }
 
 model zoom_participant {
@@ -40,4 +39,10 @@ model zoom_participant {
   leave_time     DateTime?
   duration       Int?
   status         String?
+}
+
+model refresh_token {
+  id            String   @id @default(uuid())
+  refresh_token String
+  created_at    DateTime @default(now())
 }

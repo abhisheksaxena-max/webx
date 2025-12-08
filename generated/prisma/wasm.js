@@ -128,8 +128,7 @@ exports.Prisma.RegistrantScalarFieldEnum = {
   join_url: 'join_url',
   topic: 'topic',
   start_time: 'start_time',
-  registered_at: 'registered_at',
-  created_at: 'created_at'
+  registered_at: 'registered_at'
 };
 
 exports.Prisma.Zoom_participantScalarFieldEnum = {
@@ -143,6 +142,12 @@ exports.Prisma.Zoom_participantScalarFieldEnum = {
   leave_time: 'leave_time',
   duration: 'duration',
   status: 'status'
+};
+
+exports.Prisma.Refresh_tokenScalarFieldEnum = {
+  id: 'id',
+  refresh_token: 'refresh_token',
+  created_at: 'created_at'
 };
 
 exports.Prisma.SortOrder = {
@@ -163,7 +168,8 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   registrant: 'registrant',
-  zoom_participant: 'zoom_participant'
+  zoom_participant: 'zoom_participant',
+  refresh_token: 'refresh_token'
 };
 
 /**
