@@ -90,7 +90,7 @@ const getMergedWebinarData = async () => {
       return {
         // From registrant table
         date: r.registered_at.toISOString().split("T")[0],
-        registration_time: r.registered_at.toLocaleTimeString("en-US", {
+        registration_time: r.registered_at.toLocaleTimeString("en-IN", {
           hour: "2-digit",
           minute: "2-digit",
           hour12: true,
@@ -121,7 +121,7 @@ const getMergedWebinarData = async () => {
 };
 const fetchToken = async () => {
   try {
-    const tokenRow = await prisma.refresh_token.findFirst({
+    const tokenRow = await prisma.zoom_refresh_token.findFirst({
       select: {
         refresh_token: true,
       },
@@ -138,13 +138,13 @@ const saveToken = async (zoomRefreshToken) => {
   try {
     if (!zoomRefreshToken) return;
 
-    const first = await prisma.refresh_token.findFirst({
+    const first = await prisma.zoom_refresh_token.findFirst({
       select: { id: true },
     });
 
     if (!first) return;
 
-    await prisma.refresh_token.update({
+    await prisma.zoom_refresh_token.update({
       where: { id: first.id },
       data: {
         refresh_token: zoomRefreshToken,

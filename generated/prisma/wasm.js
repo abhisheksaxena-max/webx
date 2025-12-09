@@ -144,7 +144,7 @@ exports.Prisma.Zoom_participantScalarFieldEnum = {
   status: 'status'
 };
 
-exports.Prisma.Refresh_tokenScalarFieldEnum = {
+exports.Prisma.Zoom_refresh_tokenScalarFieldEnum = {
   id: 'id',
   refresh_token: 'refresh_token',
   created_at: 'created_at'
@@ -169,7 +169,7 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   registrant: 'registrant',
   zoom_participant: 'zoom_participant',
-  refresh_token: 'refresh_token'
+  zoom_refresh_token: 'zoom_refresh_token'
 };
 
 /**

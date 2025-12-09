@@ -24,10 +24,10 @@ export type registrant = $Result.DefaultSelection<Prisma.$registrantPayload>
  */
 export type zoom_participant = $Result.DefaultSelection<Prisma.$zoom_participantPayload>
 /**
- * Model refresh_token
+ * Model zoom_refresh_token
  * 
  */
-export type refresh_token = $Result.DefaultSelection<Prisma.$refresh_tokenPayload>
+export type zoom_refresh_token = $Result.DefaultSelection<Prisma.$zoom_refresh_tokenPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -173,14 +173,14 @@ export class PrismaClient<
   get zoom_participant(): Prisma.zoom_participantDelegate<ExtArgs>;
 
   /**
-   * `prisma.refresh_token`: Exposes CRUD operations for the **refresh_token** model.
+   * `prisma.zoom_refresh_token`: Exposes CRUD operations for the **zoom_refresh_token** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Refresh_tokens
-    * const refresh_tokens = await prisma.refresh_token.findMany()
+    * // Fetch zero or more Zoom_refresh_tokens
+    * const zoom_refresh_tokens = await prisma.zoom_refresh_token.findMany()
     * ```
     */
-  get refresh_token(): Prisma.refresh_tokenDelegate<ExtArgs>;
+  get zoom_refresh_token(): Prisma.zoom_refresh_tokenDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -623,7 +623,7 @@ export namespace Prisma {
   export const ModelName: {
     registrant: 'registrant',
     zoom_participant: 'zoom_participant',
-    refresh_token: 'refresh_token'
+    zoom_refresh_token: 'zoom_refresh_token'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -639,7 +639,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "registrant" | "zoom_participant" | "refresh_token"
+      modelProps: "registrant" | "zoom_participant" | "zoom_refresh_token"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -783,73 +783,73 @@ export namespace Prisma {
           }
         }
       }
-      refresh_token: {
-        payload: Prisma.$refresh_tokenPayload<ExtArgs>
-        fields: Prisma.refresh_tokenFieldRefs
+      zoom_refresh_token: {
+        payload: Prisma.$zoom_refresh_tokenPayload<ExtArgs>
+        fields: Prisma.zoom_refresh_tokenFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.refresh_tokenFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload> | null
+            args: Prisma.zoom_refresh_tokenFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.refresh_tokenFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload>
+            args: Prisma.zoom_refresh_tokenFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload>
           }
           findFirst: {
-            args: Prisma.refresh_tokenFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload> | null
+            args: Prisma.zoom_refresh_tokenFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.refresh_tokenFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload>
+            args: Prisma.zoom_refresh_tokenFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload>
           }
           findMany: {
-            args: Prisma.refresh_tokenFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload>[]
+            args: Prisma.zoom_refresh_tokenFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload>[]
           }
           create: {
-            args: Prisma.refresh_tokenCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload>
+            args: Prisma.zoom_refresh_tokenCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload>
           }
           createMany: {
-            args: Prisma.refresh_tokenCreateManyArgs<ExtArgs>
+            args: Prisma.zoom_refresh_tokenCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.refresh_tokenCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload>[]
+            args: Prisma.zoom_refresh_tokenCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload>[]
           }
           delete: {
-            args: Prisma.refresh_tokenDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload>
+            args: Prisma.zoom_refresh_tokenDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload>
           }
           update: {
-            args: Prisma.refresh_tokenUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload>
+            args: Prisma.zoom_refresh_tokenUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload>
           }
           deleteMany: {
-            args: Prisma.refresh_tokenDeleteManyArgs<ExtArgs>
+            args: Prisma.zoom_refresh_tokenDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.refresh_tokenUpdateManyArgs<ExtArgs>
+            args: Prisma.zoom_refresh_tokenUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.refresh_tokenUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$refresh_tokenPayload>
+            args: Prisma.zoom_refresh_tokenUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$zoom_refresh_tokenPayload>
           }
           aggregate: {
-            args: Prisma.Refresh_tokenAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateRefresh_token>
+            args: Prisma.Zoom_refresh_tokenAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateZoom_refresh_token>
           }
           groupBy: {
-            args: Prisma.refresh_tokenGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Refresh_tokenGroupByOutputType>[]
+            args: Prisma.zoom_refresh_tokenGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Zoom_refresh_tokenGroupByOutputType>[]
           }
           count: {
-            args: Prisma.refresh_tokenCountArgs<ExtArgs>
-            result: $Utils.Optional<Refresh_tokenCountAggregateOutputType> | number
+            args: Prisma.zoom_refresh_tokenCountArgs<ExtArgs>
+            result: $Utils.Optional<Zoom_refresh_tokenCountAggregateOutputType> | number
           }
         }
       }
@@ -2937,28 +2937,28 @@ export namespace Prisma {
 
 
   /**
-   * Model refresh_token
+   * Model zoom_refresh_token
    */
 
-  export type AggregateRefresh_token = {
-    _count: Refresh_tokenCountAggregateOutputType | null
-    _min: Refresh_tokenMinAggregateOutputType | null
-    _max: Refresh_tokenMaxAggregateOutputType | null
+  export type AggregateZoom_refresh_token = {
+    _count: Zoom_refresh_tokenCountAggregateOutputType | null
+    _min: Zoom_refresh_tokenMinAggregateOutputType | null
+    _max: Zoom_refresh_tokenMaxAggregateOutputType | null
   }
 
-  export type Refresh_tokenMinAggregateOutputType = {
+  export type Zoom_refresh_tokenMinAggregateOutputType = {
     id: string | null
     refresh_token: string | null
     created_at: Date | null
   }
 
-  export type Refresh_tokenMaxAggregateOutputType = {
+  export type Zoom_refresh_tokenMaxAggregateOutputType = {
     id: string | null
     refresh_token: string | null
     created_at: Date | null
   }
 
-  export type Refresh_tokenCountAggregateOutputType = {
+  export type Zoom_refresh_tokenCountAggregateOutputType = {
     id: number
     refresh_token: number
     created_at: number
@@ -2966,276 +2966,276 @@ export namespace Prisma {
   }
 
 
-  export type Refresh_tokenMinAggregateInputType = {
+  export type Zoom_refresh_tokenMinAggregateInputType = {
     id?: true
     refresh_token?: true
     created_at?: true
   }
 
-  export type Refresh_tokenMaxAggregateInputType = {
+  export type Zoom_refresh_tokenMaxAggregateInputType = {
     id?: true
     refresh_token?: true
     created_at?: true
   }
 
-  export type Refresh_tokenCountAggregateInputType = {
+  export type Zoom_refresh_tokenCountAggregateInputType = {
     id?: true
     refresh_token?: true
     created_at?: true
     _all?: true
   }
 
-  export type Refresh_tokenAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Zoom_refresh_tokenAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which refresh_token to aggregate.
+     * Filter which zoom_refresh_token to aggregate.
      */
-    where?: refresh_tokenWhereInput
+    where?: zoom_refresh_tokenWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of refresh_tokens to fetch.
+     * Determine the order of zoom_refresh_tokens to fetch.
      */
-    orderBy?: refresh_tokenOrderByWithRelationInput | refresh_tokenOrderByWithRelationInput[]
+    orderBy?: zoom_refresh_tokenOrderByWithRelationInput | zoom_refresh_tokenOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: refresh_tokenWhereUniqueInput
+    cursor?: zoom_refresh_tokenWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` refresh_tokens from the position of the cursor.
+     * Take `±n` zoom_refresh_tokens from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` refresh_tokens.
+     * Skip the first `n` zoom_refresh_tokens.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned refresh_tokens
+     * Count returned zoom_refresh_tokens
     **/
-    _count?: true | Refresh_tokenCountAggregateInputType
+    _count?: true | Zoom_refresh_tokenCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Refresh_tokenMinAggregateInputType
+    _min?: Zoom_refresh_tokenMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Refresh_tokenMaxAggregateInputType
+    _max?: Zoom_refresh_tokenMaxAggregateInputType
   }
 
-  export type GetRefresh_tokenAggregateType<T extends Refresh_tokenAggregateArgs> = {
-        [P in keyof T & keyof AggregateRefresh_token]: P extends '_count' | 'count'
+  export type GetZoom_refresh_tokenAggregateType<T extends Zoom_refresh_tokenAggregateArgs> = {
+        [P in keyof T & keyof AggregateZoom_refresh_token]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateRefresh_token[P]>
-      : GetScalarType<T[P], AggregateRefresh_token[P]>
+        : GetScalarType<T[P], AggregateZoom_refresh_token[P]>
+      : GetScalarType<T[P], AggregateZoom_refresh_token[P]>
   }
 
 
 
 
-  export type refresh_tokenGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: refresh_tokenWhereInput
-    orderBy?: refresh_tokenOrderByWithAggregationInput | refresh_tokenOrderByWithAggregationInput[]
-    by: Refresh_tokenScalarFieldEnum[] | Refresh_tokenScalarFieldEnum
-    having?: refresh_tokenScalarWhereWithAggregatesInput
+  export type zoom_refresh_tokenGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: zoom_refresh_tokenWhereInput
+    orderBy?: zoom_refresh_tokenOrderByWithAggregationInput | zoom_refresh_tokenOrderByWithAggregationInput[]
+    by: Zoom_refresh_tokenScalarFieldEnum[] | Zoom_refresh_tokenScalarFieldEnum
+    having?: zoom_refresh_tokenScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Refresh_tokenCountAggregateInputType | true
-    _min?: Refresh_tokenMinAggregateInputType
-    _max?: Refresh_tokenMaxAggregateInputType
+    _count?: Zoom_refresh_tokenCountAggregateInputType | true
+    _min?: Zoom_refresh_tokenMinAggregateInputType
+    _max?: Zoom_refresh_tokenMaxAggregateInputType
   }
 
-  export type Refresh_tokenGroupByOutputType = {
+  export type Zoom_refresh_tokenGroupByOutputType = {
     id: string
     refresh_token: string
     created_at: Date
-    _count: Refresh_tokenCountAggregateOutputType | null
-    _min: Refresh_tokenMinAggregateOutputType | null
-    _max: Refresh_tokenMaxAggregateOutputType | null
+    _count: Zoom_refresh_tokenCountAggregateOutputType | null
+    _min: Zoom_refresh_tokenMinAggregateOutputType | null
+    _max: Zoom_refresh_tokenMaxAggregateOutputType | null
   }
 
-  type GetRefresh_tokenGroupByPayload<T extends refresh_tokenGroupByArgs> = Prisma.PrismaPromise<
+  type GetZoom_refresh_tokenGroupByPayload<T extends zoom_refresh_tokenGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Refresh_tokenGroupByOutputType, T['by']> &
+      PickEnumerable<Zoom_refresh_tokenGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Refresh_tokenGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Zoom_refresh_tokenGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Refresh_tokenGroupByOutputType[P]>
-            : GetScalarType<T[P], Refresh_tokenGroupByOutputType[P]>
+              : GetScalarType<T[P], Zoom_refresh_tokenGroupByOutputType[P]>
+            : GetScalarType<T[P], Zoom_refresh_tokenGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type refresh_tokenSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type zoom_refresh_tokenSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     refresh_token?: boolean
     created_at?: boolean
-  }, ExtArgs["result"]["refresh_token"]>
+  }, ExtArgs["result"]["zoom_refresh_token"]>
 
-  export type refresh_tokenSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type zoom_refresh_tokenSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     refresh_token?: boolean
     created_at?: boolean
-  }, ExtArgs["result"]["refresh_token"]>
+  }, ExtArgs["result"]["zoom_refresh_token"]>
 
-  export type refresh_tokenSelectScalar = {
+  export type zoom_refresh_tokenSelectScalar = {
     id?: boolean
     refresh_token?: boolean
     created_at?: boolean
   }
 
 
-  export type $refresh_tokenPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "refresh_token"
+  export type $zoom_refresh_tokenPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "zoom_refresh_token"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
       refresh_token: string
       created_at: Date
-    }, ExtArgs["result"]["refresh_token"]>
+    }, ExtArgs["result"]["zoom_refresh_token"]>
     composites: {}
   }
 
-  type refresh_tokenGetPayload<S extends boolean | null | undefined | refresh_tokenDefaultArgs> = $Result.GetResult<Prisma.$refresh_tokenPayload, S>
+  type zoom_refresh_tokenGetPayload<S extends boolean | null | undefined | zoom_refresh_tokenDefaultArgs> = $Result.GetResult<Prisma.$zoom_refresh_tokenPayload, S>
 
-  type refresh_tokenCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<refresh_tokenFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Refresh_tokenCountAggregateInputType | true
+  type zoom_refresh_tokenCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<zoom_refresh_tokenFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Zoom_refresh_tokenCountAggregateInputType | true
     }
 
-  export interface refresh_tokenDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['refresh_token'], meta: { name: 'refresh_token' } }
+  export interface zoom_refresh_tokenDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['zoom_refresh_token'], meta: { name: 'zoom_refresh_token' } }
     /**
-     * Find zero or one Refresh_token that matches the filter.
-     * @param {refresh_tokenFindUniqueArgs} args - Arguments to find a Refresh_token
+     * Find zero or one Zoom_refresh_token that matches the filter.
+     * @param {zoom_refresh_tokenFindUniqueArgs} args - Arguments to find a Zoom_refresh_token
      * @example
-     * // Get one Refresh_token
-     * const refresh_token = await prisma.refresh_token.findUnique({
+     * // Get one Zoom_refresh_token
+     * const zoom_refresh_token = await prisma.zoom_refresh_token.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends refresh_tokenFindUniqueArgs>(args: SelectSubset<T, refresh_tokenFindUniqueArgs<ExtArgs>>): Prisma__refresh_tokenClient<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+    findUnique<T extends zoom_refresh_tokenFindUniqueArgs>(args: SelectSubset<T, zoom_refresh_tokenFindUniqueArgs<ExtArgs>>): Prisma__zoom_refresh_tokenClient<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
 
     /**
-     * Find one Refresh_token that matches the filter or throw an error with `error.code='P2025'` 
+     * Find one Zoom_refresh_token that matches the filter or throw an error with `error.code='P2025'` 
      * if no matches were found.
-     * @param {refresh_tokenFindUniqueOrThrowArgs} args - Arguments to find a Refresh_token
+     * @param {zoom_refresh_tokenFindUniqueOrThrowArgs} args - Arguments to find a Zoom_refresh_token
      * @example
-     * // Get one Refresh_token
-     * const refresh_token = await prisma.refresh_token.findUniqueOrThrow({
+     * // Get one Zoom_refresh_token
+     * const zoom_refresh_token = await prisma.zoom_refresh_token.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends refresh_tokenFindUniqueOrThrowArgs>(args: SelectSubset<T, refresh_tokenFindUniqueOrThrowArgs<ExtArgs>>): Prisma__refresh_tokenClient<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+    findUniqueOrThrow<T extends zoom_refresh_tokenFindUniqueOrThrowArgs>(args: SelectSubset<T, zoom_refresh_tokenFindUniqueOrThrowArgs<ExtArgs>>): Prisma__zoom_refresh_tokenClient<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
 
     /**
-     * Find the first Refresh_token that matches the filter.
+     * Find the first Zoom_refresh_token that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {refresh_tokenFindFirstArgs} args - Arguments to find a Refresh_token
+     * @param {zoom_refresh_tokenFindFirstArgs} args - Arguments to find a Zoom_refresh_token
      * @example
-     * // Get one Refresh_token
-     * const refresh_token = await prisma.refresh_token.findFirst({
+     * // Get one Zoom_refresh_token
+     * const zoom_refresh_token = await prisma.zoom_refresh_token.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends refresh_tokenFindFirstArgs>(args?: SelectSubset<T, refresh_tokenFindFirstArgs<ExtArgs>>): Prisma__refresh_tokenClient<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+    findFirst<T extends zoom_refresh_tokenFindFirstArgs>(args?: SelectSubset<T, zoom_refresh_tokenFindFirstArgs<ExtArgs>>): Prisma__zoom_refresh_tokenClient<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
 
     /**
-     * Find the first Refresh_token that matches the filter or
+     * Find the first Zoom_refresh_token that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {refresh_tokenFindFirstOrThrowArgs} args - Arguments to find a Refresh_token
+     * @param {zoom_refresh_tokenFindFirstOrThrowArgs} args - Arguments to find a Zoom_refresh_token
      * @example
-     * // Get one Refresh_token
-     * const refresh_token = await prisma.refresh_token.findFirstOrThrow({
+     * // Get one Zoom_refresh_token
+     * const zoom_refresh_token = await prisma.zoom_refresh_token.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends refresh_tokenFindFirstOrThrowArgs>(args?: SelectSubset<T, refresh_tokenFindFirstOrThrowArgs<ExtArgs>>): Prisma__refresh_tokenClient<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+    findFirstOrThrow<T extends zoom_refresh_tokenFindFirstOrThrowArgs>(args?: SelectSubset<T, zoom_refresh_tokenFindFirstOrThrowArgs<ExtArgs>>): Prisma__zoom_refresh_tokenClient<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
 
     /**
-     * Find zero or more Refresh_tokens that matches the filter.
+     * Find zero or more Zoom_refresh_tokens that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {refresh_tokenFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {zoom_refresh_tokenFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Refresh_tokens
-     * const refresh_tokens = await prisma.refresh_token.findMany()
+     * // Get all Zoom_refresh_tokens
+     * const zoom_refresh_tokens = await prisma.zoom_refresh_token.findMany()
      * 
-     * // Get first 10 Refresh_tokens
-     * const refresh_tokens = await prisma.refresh_token.findMany({ take: 10 })
+     * // Get first 10 Zoom_refresh_tokens
+     * const zoom_refresh_tokens = await prisma.zoom_refresh_token.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const refresh_tokenWithIdOnly = await prisma.refresh_token.findMany({ select: { id: true } })
+     * const zoom_refresh_tokenWithIdOnly = await prisma.zoom_refresh_token.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends refresh_tokenFindManyArgs>(args?: SelectSubset<T, refresh_tokenFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "findMany">>
+    findMany<T extends zoom_refresh_tokenFindManyArgs>(args?: SelectSubset<T, zoom_refresh_tokenFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "findMany">>
 
     /**
-     * Create a Refresh_token.
-     * @param {refresh_tokenCreateArgs} args - Arguments to create a Refresh_token.
+     * Create a Zoom_refresh_token.
+     * @param {zoom_refresh_tokenCreateArgs} args - Arguments to create a Zoom_refresh_token.
      * @example
-     * // Create one Refresh_token
-     * const Refresh_token = await prisma.refresh_token.create({
+     * // Create one Zoom_refresh_token
+     * const Zoom_refresh_token = await prisma.zoom_refresh_token.create({
      *   data: {
-     *     // ... data to create a Refresh_token
+     *     // ... data to create a Zoom_refresh_token
      *   }
      * })
      * 
      */
-    create<T extends refresh_tokenCreateArgs>(args: SelectSubset<T, refresh_tokenCreateArgs<ExtArgs>>): Prisma__refresh_tokenClient<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "create">, never, ExtArgs>
+    create<T extends zoom_refresh_tokenCreateArgs>(args: SelectSubset<T, zoom_refresh_tokenCreateArgs<ExtArgs>>): Prisma__zoom_refresh_tokenClient<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "create">, never, ExtArgs>
 
     /**
-     * Create many Refresh_tokens.
-     * @param {refresh_tokenCreateManyArgs} args - Arguments to create many Refresh_tokens.
+     * Create many Zoom_refresh_tokens.
+     * @param {zoom_refresh_tokenCreateManyArgs} args - Arguments to create many Zoom_refresh_tokens.
      * @example
-     * // Create many Refresh_tokens
-     * const refresh_token = await prisma.refresh_token.createMany({
+     * // Create many Zoom_refresh_tokens
+     * const zoom_refresh_token = await prisma.zoom_refresh_token.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends refresh_tokenCreateManyArgs>(args?: SelectSubset<T, refresh_tokenCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends zoom_refresh_tokenCreateManyArgs>(args?: SelectSubset<T, zoom_refresh_tokenCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Refresh_tokens and returns the data saved in the database.
-     * @param {refresh_tokenCreateManyAndReturnArgs} args - Arguments to create many Refresh_tokens.
+     * Create many Zoom_refresh_tokens and returns the data saved in the database.
+     * @param {zoom_refresh_tokenCreateManyAndReturnArgs} args - Arguments to create many Zoom_refresh_tokens.
      * @example
-     * // Create many Refresh_tokens
-     * const refresh_token = await prisma.refresh_token.createManyAndReturn({
+     * // Create many Zoom_refresh_tokens
+     * const zoom_refresh_token = await prisma.zoom_refresh_token.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Refresh_tokens and only return the `id`
-     * const refresh_tokenWithIdOnly = await prisma.refresh_token.createManyAndReturn({ 
+     * // Create many Zoom_refresh_tokens and only return the `id`
+     * const zoom_refresh_tokenWithIdOnly = await prisma.zoom_refresh_token.createManyAndReturn({ 
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -3245,28 +3245,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends refresh_tokenCreateManyAndReturnArgs>(args?: SelectSubset<T, refresh_tokenCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "createManyAndReturn">>
+    createManyAndReturn<T extends zoom_refresh_tokenCreateManyAndReturnArgs>(args?: SelectSubset<T, zoom_refresh_tokenCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "createManyAndReturn">>
 
     /**
-     * Delete a Refresh_token.
-     * @param {refresh_tokenDeleteArgs} args - Arguments to delete one Refresh_token.
+     * Delete a Zoom_refresh_token.
+     * @param {zoom_refresh_tokenDeleteArgs} args - Arguments to delete one Zoom_refresh_token.
      * @example
-     * // Delete one Refresh_token
-     * const Refresh_token = await prisma.refresh_token.delete({
+     * // Delete one Zoom_refresh_token
+     * const Zoom_refresh_token = await prisma.zoom_refresh_token.delete({
      *   where: {
-     *     // ... filter to delete one Refresh_token
+     *     // ... filter to delete one Zoom_refresh_token
      *   }
      * })
      * 
      */
-    delete<T extends refresh_tokenDeleteArgs>(args: SelectSubset<T, refresh_tokenDeleteArgs<ExtArgs>>): Prisma__refresh_tokenClient<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+    delete<T extends zoom_refresh_tokenDeleteArgs>(args: SelectSubset<T, zoom_refresh_tokenDeleteArgs<ExtArgs>>): Prisma__zoom_refresh_tokenClient<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "delete">, never, ExtArgs>
 
     /**
-     * Update one Refresh_token.
-     * @param {refresh_tokenUpdateArgs} args - Arguments to update one Refresh_token.
+     * Update one Zoom_refresh_token.
+     * @param {zoom_refresh_tokenUpdateArgs} args - Arguments to update one Zoom_refresh_token.
      * @example
-     * // Update one Refresh_token
-     * const refresh_token = await prisma.refresh_token.update({
+     * // Update one Zoom_refresh_token
+     * const zoom_refresh_token = await prisma.zoom_refresh_token.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3276,30 +3276,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends refresh_tokenUpdateArgs>(args: SelectSubset<T, refresh_tokenUpdateArgs<ExtArgs>>): Prisma__refresh_tokenClient<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "update">, never, ExtArgs>
+    update<T extends zoom_refresh_tokenUpdateArgs>(args: SelectSubset<T, zoom_refresh_tokenUpdateArgs<ExtArgs>>): Prisma__zoom_refresh_tokenClient<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "update">, never, ExtArgs>
 
     /**
-     * Delete zero or more Refresh_tokens.
-     * @param {refresh_tokenDeleteManyArgs} args - Arguments to filter Refresh_tokens to delete.
+     * Delete zero or more Zoom_refresh_tokens.
+     * @param {zoom_refresh_tokenDeleteManyArgs} args - Arguments to filter Zoom_refresh_tokens to delete.
      * @example
-     * // Delete a few Refresh_tokens
-     * const { count } = await prisma.refresh_token.deleteMany({
+     * // Delete a few Zoom_refresh_tokens
+     * const { count } = await prisma.zoom_refresh_token.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends refresh_tokenDeleteManyArgs>(args?: SelectSubset<T, refresh_tokenDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends zoom_refresh_tokenDeleteManyArgs>(args?: SelectSubset<T, zoom_refresh_tokenDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Refresh_tokens.
+     * Update zero or more Zoom_refresh_tokens.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {refresh_tokenUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {zoom_refresh_tokenUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Refresh_tokens
-     * const refresh_token = await prisma.refresh_token.updateMany({
+     * // Update many Zoom_refresh_tokens
+     * const zoom_refresh_token = await prisma.zoom_refresh_token.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3309,56 +3309,56 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends refresh_tokenUpdateManyArgs>(args: SelectSubset<T, refresh_tokenUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends zoom_refresh_tokenUpdateManyArgs>(args: SelectSubset<T, zoom_refresh_tokenUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Refresh_token.
-     * @param {refresh_tokenUpsertArgs} args - Arguments to update or create a Refresh_token.
+     * Create or update one Zoom_refresh_token.
+     * @param {zoom_refresh_tokenUpsertArgs} args - Arguments to update or create a Zoom_refresh_token.
      * @example
-     * // Update or create a Refresh_token
-     * const refresh_token = await prisma.refresh_token.upsert({
+     * // Update or create a Zoom_refresh_token
+     * const zoom_refresh_token = await prisma.zoom_refresh_token.upsert({
      *   create: {
-     *     // ... data to create a Refresh_token
+     *     // ... data to create a Zoom_refresh_token
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Refresh_token we want to update
+     *     // ... the filter for the Zoom_refresh_token we want to update
      *   }
      * })
      */
-    upsert<T extends refresh_tokenUpsertArgs>(args: SelectSubset<T, refresh_tokenUpsertArgs<ExtArgs>>): Prisma__refresh_tokenClient<$Result.GetResult<Prisma.$refresh_tokenPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+    upsert<T extends zoom_refresh_tokenUpsertArgs>(args: SelectSubset<T, zoom_refresh_tokenUpsertArgs<ExtArgs>>): Prisma__zoom_refresh_tokenClient<$Result.GetResult<Prisma.$zoom_refresh_tokenPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
 
 
     /**
-     * Count the number of Refresh_tokens.
+     * Count the number of Zoom_refresh_tokens.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {refresh_tokenCountArgs} args - Arguments to filter Refresh_tokens to count.
+     * @param {zoom_refresh_tokenCountArgs} args - Arguments to filter Zoom_refresh_tokens to count.
      * @example
-     * // Count the number of Refresh_tokens
-     * const count = await prisma.refresh_token.count({
+     * // Count the number of Zoom_refresh_tokens
+     * const count = await prisma.zoom_refresh_token.count({
      *   where: {
-     *     // ... the filter for the Refresh_tokens we want to count
+     *     // ... the filter for the Zoom_refresh_tokens we want to count
      *   }
      * })
     **/
-    count<T extends refresh_tokenCountArgs>(
-      args?: Subset<T, refresh_tokenCountArgs>,
+    count<T extends zoom_refresh_tokenCountArgs>(
+      args?: Subset<T, zoom_refresh_tokenCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Refresh_tokenCountAggregateOutputType>
+          : GetScalarType<T['select'], Zoom_refresh_tokenCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Refresh_token.
+     * Allows you to perform aggregations operations on a Zoom_refresh_token.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Refresh_tokenAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Zoom_refresh_tokenAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -3378,13 +3378,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Refresh_tokenAggregateArgs>(args: Subset<T, Refresh_tokenAggregateArgs>): Prisma.PrismaPromise<GetRefresh_tokenAggregateType<T>>
+    aggregate<T extends Zoom_refresh_tokenAggregateArgs>(args: Subset<T, Zoom_refresh_tokenAggregateArgs>): Prisma.PrismaPromise<GetZoom_refresh_tokenAggregateType<T>>
 
     /**
-     * Group by Refresh_token.
+     * Group by Zoom_refresh_token.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {refresh_tokenGroupByArgs} args - Group by arguments.
+     * @param {zoom_refresh_tokenGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3399,14 +3399,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends refresh_tokenGroupByArgs,
+      T extends zoom_refresh_tokenGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: refresh_tokenGroupByArgs['orderBy'] }
-        : { orderBy?: refresh_tokenGroupByArgs['orderBy'] },
+        ? { orderBy: zoom_refresh_tokenGroupByArgs['orderBy'] }
+        : { orderBy?: zoom_refresh_tokenGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3455,20 +3455,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, refresh_tokenGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRefresh_tokenGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, zoom_refresh_tokenGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetZoom_refresh_tokenGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the refresh_token model
+   * Fields of the zoom_refresh_token model
    */
-  readonly fields: refresh_tokenFieldRefs;
+  readonly fields: zoom_refresh_tokenFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for refresh_token.
+   * The delegate class that acts as a "Promise-like" for zoom_refresh_token.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__refresh_tokenClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__zoom_refresh_tokenClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -3496,297 +3496,297 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the refresh_token model
+   * Fields of the zoom_refresh_token model
    */ 
-  interface refresh_tokenFieldRefs {
-    readonly id: FieldRef<"refresh_token", 'String'>
-    readonly refresh_token: FieldRef<"refresh_token", 'String'>
-    readonly created_at: FieldRef<"refresh_token", 'DateTime'>
+  interface zoom_refresh_tokenFieldRefs {
+    readonly id: FieldRef<"zoom_refresh_token", 'String'>
+    readonly refresh_token: FieldRef<"zoom_refresh_token", 'String'>
+    readonly created_at: FieldRef<"zoom_refresh_token", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * refresh_token findUnique
+   * zoom_refresh_token findUnique
    */
-  export type refresh_tokenFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
     /**
-     * Filter, which refresh_token to fetch.
+     * Filter, which zoom_refresh_token to fetch.
      */
-    where: refresh_tokenWhereUniqueInput
+    where: zoom_refresh_tokenWhereUniqueInput
   }
 
   /**
-   * refresh_token findUniqueOrThrow
+   * zoom_refresh_token findUniqueOrThrow
    */
-  export type refresh_tokenFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
     /**
-     * Filter, which refresh_token to fetch.
+     * Filter, which zoom_refresh_token to fetch.
      */
-    where: refresh_tokenWhereUniqueInput
+    where: zoom_refresh_tokenWhereUniqueInput
   }
 
   /**
-   * refresh_token findFirst
+   * zoom_refresh_token findFirst
    */
-  export type refresh_tokenFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
     /**
-     * Filter, which refresh_token to fetch.
+     * Filter, which zoom_refresh_token to fetch.
      */
-    where?: refresh_tokenWhereInput
+    where?: zoom_refresh_tokenWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of refresh_tokens to fetch.
+     * Determine the order of zoom_refresh_tokens to fetch.
      */
-    orderBy?: refresh_tokenOrderByWithRelationInput | refresh_tokenOrderByWithRelationInput[]
+    orderBy?: zoom_refresh_tokenOrderByWithRelationInput | zoom_refresh_tokenOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for refresh_tokens.
+     * Sets the position for searching for zoom_refresh_tokens.
      */
-    cursor?: refresh_tokenWhereUniqueInput
+    cursor?: zoom_refresh_tokenWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` refresh_tokens from the position of the cursor.
+     * Take `±n` zoom_refresh_tokens from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` refresh_tokens.
+     * Skip the first `n` zoom_refresh_tokens.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of refresh_tokens.
+     * Filter by unique combinations of zoom_refresh_tokens.
      */
-    distinct?: Refresh_tokenScalarFieldEnum | Refresh_tokenScalarFieldEnum[]
+    distinct?: Zoom_refresh_tokenScalarFieldEnum | Zoom_refresh_tokenScalarFieldEnum[]
   }
 
   /**
-   * refresh_token findFirstOrThrow
+   * zoom_refresh_token findFirstOrThrow
    */
-  export type refresh_tokenFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
     /**
-     * Filter, which refresh_token to fetch.
+     * Filter, which zoom_refresh_token to fetch.
      */
-    where?: refresh_tokenWhereInput
+    where?: zoom_refresh_tokenWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of refresh_tokens to fetch.
+     * Determine the order of zoom_refresh_tokens to fetch.
      */
-    orderBy?: refresh_tokenOrderByWithRelationInput | refresh_tokenOrderByWithRelationInput[]
+    orderBy?: zoom_refresh_tokenOrderByWithRelationInput | zoom_refresh_tokenOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for refresh_tokens.
+     * Sets the position for searching for zoom_refresh_tokens.
      */
-    cursor?: refresh_tokenWhereUniqueInput
+    cursor?: zoom_refresh_tokenWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` refresh_tokens from the position of the cursor.
+     * Take `±n` zoom_refresh_tokens from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` refresh_tokens.
+     * Skip the first `n` zoom_refresh_tokens.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of refresh_tokens.
+     * Filter by unique combinations of zoom_refresh_tokens.
      */
-    distinct?: Refresh_tokenScalarFieldEnum | Refresh_tokenScalarFieldEnum[]
+    distinct?: Zoom_refresh_tokenScalarFieldEnum | Zoom_refresh_tokenScalarFieldEnum[]
   }
 
   /**
-   * refresh_token findMany
+   * zoom_refresh_token findMany
    */
-  export type refresh_tokenFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
     /**
-     * Filter, which refresh_tokens to fetch.
+     * Filter, which zoom_refresh_tokens to fetch.
      */
-    where?: refresh_tokenWhereInput
+    where?: zoom_refresh_tokenWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of refresh_tokens to fetch.
+     * Determine the order of zoom_refresh_tokens to fetch.
      */
-    orderBy?: refresh_tokenOrderByWithRelationInput | refresh_tokenOrderByWithRelationInput[]
+    orderBy?: zoom_refresh_tokenOrderByWithRelationInput | zoom_refresh_tokenOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing refresh_tokens.
+     * Sets the position for listing zoom_refresh_tokens.
      */
-    cursor?: refresh_tokenWhereUniqueInput
+    cursor?: zoom_refresh_tokenWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` refresh_tokens from the position of the cursor.
+     * Take `±n` zoom_refresh_tokens from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` refresh_tokens.
+     * Skip the first `n` zoom_refresh_tokens.
      */
     skip?: number
-    distinct?: Refresh_tokenScalarFieldEnum | Refresh_tokenScalarFieldEnum[]
+    distinct?: Zoom_refresh_tokenScalarFieldEnum | Zoom_refresh_tokenScalarFieldEnum[]
   }
 
   /**
-   * refresh_token create
+   * zoom_refresh_token create
    */
-  export type refresh_tokenCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
     /**
-     * The data needed to create a refresh_token.
+     * The data needed to create a zoom_refresh_token.
      */
-    data: XOR<refresh_tokenCreateInput, refresh_tokenUncheckedCreateInput>
+    data: XOR<zoom_refresh_tokenCreateInput, zoom_refresh_tokenUncheckedCreateInput>
   }
 
   /**
-   * refresh_token createMany
+   * zoom_refresh_token createMany
    */
-  export type refresh_tokenCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many refresh_tokens.
+     * The data used to create many zoom_refresh_tokens.
      */
-    data: refresh_tokenCreateManyInput | refresh_tokenCreateManyInput[]
+    data: zoom_refresh_tokenCreateManyInput | zoom_refresh_tokenCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * refresh_token createManyAndReturn
+   * zoom_refresh_token createManyAndReturn
    */
-  export type refresh_tokenCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelectCreateManyAndReturn<ExtArgs> | null
+    select?: zoom_refresh_tokenSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * The data used to create many refresh_tokens.
+     * The data used to create many zoom_refresh_tokens.
      */
-    data: refresh_tokenCreateManyInput | refresh_tokenCreateManyInput[]
+    data: zoom_refresh_tokenCreateManyInput | zoom_refresh_tokenCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * refresh_token update
+   * zoom_refresh_token update
    */
-  export type refresh_tokenUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
     /**
-     * The data needed to update a refresh_token.
+     * The data needed to update a zoom_refresh_token.
      */
-    data: XOR<refresh_tokenUpdateInput, refresh_tokenUncheckedUpdateInput>
+    data: XOR<zoom_refresh_tokenUpdateInput, zoom_refresh_tokenUncheckedUpdateInput>
     /**
-     * Choose, which refresh_token to update.
+     * Choose, which zoom_refresh_token to update.
      */
-    where: refresh_tokenWhereUniqueInput
+    where: zoom_refresh_tokenWhereUniqueInput
   }
 
   /**
-   * refresh_token updateMany
+   * zoom_refresh_token updateMany
    */
-  export type refresh_tokenUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update refresh_tokens.
+     * The data used to update zoom_refresh_tokens.
      */
-    data: XOR<refresh_tokenUpdateManyMutationInput, refresh_tokenUncheckedUpdateManyInput>
+    data: XOR<zoom_refresh_tokenUpdateManyMutationInput, zoom_refresh_tokenUncheckedUpdateManyInput>
     /**
-     * Filter which refresh_tokens to update
+     * Filter which zoom_refresh_tokens to update
      */
-    where?: refresh_tokenWhereInput
+    where?: zoom_refresh_tokenWhereInput
   }
 
   /**
-   * refresh_token upsert
+   * zoom_refresh_token upsert
    */
-  export type refresh_tokenUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
     /**
-     * The filter to search for the refresh_token to update in case it exists.
+     * The filter to search for the zoom_refresh_token to update in case it exists.
      */
-    where: refresh_tokenWhereUniqueInput
+    where: zoom_refresh_tokenWhereUniqueInput
     /**
-     * In case the refresh_token found by the `where` argument doesn't exist, create a new refresh_token with this data.
+     * In case the zoom_refresh_token found by the `where` argument doesn't exist, create a new zoom_refresh_token with this data.
      */
-    create: XOR<refresh_tokenCreateInput, refresh_tokenUncheckedCreateInput>
+    create: XOR<zoom_refresh_tokenCreateInput, zoom_refresh_tokenUncheckedCreateInput>
     /**
-     * In case the refresh_token was found with the provided `where` argument, update it with this data.
+     * In case the zoom_refresh_token was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<refresh_tokenUpdateInput, refresh_tokenUncheckedUpdateInput>
+    update: XOR<zoom_refresh_tokenUpdateInput, zoom_refresh_tokenUncheckedUpdateInput>
   }
 
   /**
-   * refresh_token delete
+   * zoom_refresh_token delete
    */
-  export type refresh_tokenDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
     /**
-     * Filter which refresh_token to delete.
+     * Filter which zoom_refresh_token to delete.
      */
-    where: refresh_tokenWhereUniqueInput
+    where: zoom_refresh_tokenWhereUniqueInput
   }
 
   /**
-   * refresh_token deleteMany
+   * zoom_refresh_token deleteMany
    */
-  export type refresh_tokenDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which refresh_tokens to delete
+     * Filter which zoom_refresh_tokens to delete
      */
-    where?: refresh_tokenWhereInput
+    where?: zoom_refresh_tokenWhereInput
   }
 
   /**
-   * refresh_token without action
+   * zoom_refresh_token without action
    */
-  export type refresh_tokenDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type zoom_refresh_tokenDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the refresh_token
+     * Select specific fields to fetch from the zoom_refresh_token
      */
-    select?: refresh_tokenSelect<ExtArgs> | null
+    select?: zoom_refresh_tokenSelect<ExtArgs> | null
   }
 
 
@@ -3837,13 +3837,13 @@ export namespace Prisma {
   export type Zoom_participantScalarFieldEnum = (typeof Zoom_participantScalarFieldEnum)[keyof typeof Zoom_participantScalarFieldEnum]
 
 
-  export const Refresh_tokenScalarFieldEnum: {
+  export const Zoom_refresh_tokenScalarFieldEnum: {
     id: 'id',
     refresh_token: 'refresh_token',
     created_at: 'created_at'
   };
 
-  export type Refresh_tokenScalarFieldEnum = (typeof Refresh_tokenScalarFieldEnum)[keyof typeof Refresh_tokenScalarFieldEnum]
+  export type Zoom_refresh_tokenScalarFieldEnum = (typeof Zoom_refresh_tokenScalarFieldEnum)[keyof typeof Zoom_refresh_tokenScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -4095,46 +4095,46 @@ export namespace Prisma {
     status?: StringNullableWithAggregatesFilter<"zoom_participant"> | string | null
   }
 
-  export type refresh_tokenWhereInput = {
-    AND?: refresh_tokenWhereInput | refresh_tokenWhereInput[]
-    OR?: refresh_tokenWhereInput[]
-    NOT?: refresh_tokenWhereInput | refresh_tokenWhereInput[]
-    id?: StringFilter<"refresh_token"> | string
-    refresh_token?: StringFilter<"refresh_token"> | string
-    created_at?: DateTimeFilter<"refresh_token"> | Date | string
+  export type zoom_refresh_tokenWhereInput = {
+    AND?: zoom_refresh_tokenWhereInput | zoom_refresh_tokenWhereInput[]
+    OR?: zoom_refresh_tokenWhereInput[]
+    NOT?: zoom_refresh_tokenWhereInput | zoom_refresh_tokenWhereInput[]
+    id?: StringFilter<"zoom_refresh_token"> | string
+    refresh_token?: StringFilter<"zoom_refresh_token"> | string
+    created_at?: DateTimeFilter<"zoom_refresh_token"> | Date | string
   }
 
-  export type refresh_tokenOrderByWithRelationInput = {
+  export type zoom_refresh_tokenOrderByWithRelationInput = {
     id?: SortOrder
     refresh_token?: SortOrder
     created_at?: SortOrder
   }
 
-  export type refresh_tokenWhereUniqueInput = Prisma.AtLeast<{
+  export type zoom_refresh_tokenWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: refresh_tokenWhereInput | refresh_tokenWhereInput[]
-    OR?: refresh_tokenWhereInput[]
-    NOT?: refresh_tokenWhereInput | refresh_tokenWhereInput[]
-    refresh_token?: StringFilter<"refresh_token"> | string
-    created_at?: DateTimeFilter<"refresh_token"> | Date | string
+    AND?: zoom_refresh_tokenWhereInput | zoom_refresh_tokenWhereInput[]
+    OR?: zoom_refresh_tokenWhereInput[]
+    NOT?: zoom_refresh_tokenWhereInput | zoom_refresh_tokenWhereInput[]
+    refresh_token?: StringFilter<"zoom_refresh_token"> | string
+    created_at?: DateTimeFilter<"zoom_refresh_token"> | Date | string
   }, "id">
 
-  export type refresh_tokenOrderByWithAggregationInput = {
+  export type zoom_refresh_tokenOrderByWithAggregationInput = {
     id?: SortOrder
     refresh_token?: SortOrder
     created_at?: SortOrder
-    _count?: refresh_tokenCountOrderByAggregateInput
-    _max?: refresh_tokenMaxOrderByAggregateInput
-    _min?: refresh_tokenMinOrderByAggregateInput
+    _count?: zoom_refresh_tokenCountOrderByAggregateInput
+    _max?: zoom_refresh_tokenMaxOrderByAggregateInput
+    _min?: zoom_refresh_tokenMinOrderByAggregateInput
   }
 
-  export type refresh_tokenScalarWhereWithAggregatesInput = {
-    AND?: refresh_tokenScalarWhereWithAggregatesInput | refresh_tokenScalarWhereWithAggregatesInput[]
-    OR?: refresh_tokenScalarWhereWithAggregatesInput[]
-    NOT?: refresh_tokenScalarWhereWithAggregatesInput | refresh_tokenScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"refresh_token"> | string
-    refresh_token?: StringWithAggregatesFilter<"refresh_token"> | string
-    created_at?: DateTimeWithAggregatesFilter<"refresh_token"> | Date | string
+  export type zoom_refresh_tokenScalarWhereWithAggregatesInput = {
+    AND?: zoom_refresh_tokenScalarWhereWithAggregatesInput | zoom_refresh_tokenScalarWhereWithAggregatesInput[]
+    OR?: zoom_refresh_tokenScalarWhereWithAggregatesInput[]
+    NOT?: zoom_refresh_tokenScalarWhereWithAggregatesInput | zoom_refresh_tokenScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"zoom_refresh_token"> | string
+    refresh_token?: StringWithAggregatesFilter<"zoom_refresh_token"> | string
+    created_at?: DateTimeWithAggregatesFilter<"zoom_refresh_token"> | Date | string
   }
 
   export type registrantCreateInput = {
@@ -4143,7 +4143,7 @@ export namespace Prisma {
     webinar_id: string
     email: string
     first_name: string
-    last_name: string
+    last_name?: string
     phone_number?: string | null
     join_url: string
     topic: string
@@ -4157,7 +4157,7 @@ export namespace Prisma {
     webinar_id: string
     email: string
     first_name: string
-    last_name: string
+    last_name?: string
     phone_number?: string | null
     join_url: string
     topic: string
@@ -4199,7 +4199,7 @@ export namespace Prisma {
     webinar_id: string
     email: string
     first_name: string
-    last_name: string
+    last_name?: string
     phone_number?: string | null
     join_url: string
     topic: string
@@ -4326,43 +4326,43 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type refresh_tokenCreateInput = {
+  export type zoom_refresh_tokenCreateInput = {
     id?: string
     refresh_token: string
     created_at?: Date | string
   }
 
-  export type refresh_tokenUncheckedCreateInput = {
+  export type zoom_refresh_tokenUncheckedCreateInput = {
     id?: string
     refresh_token: string
     created_at?: Date | string
   }
 
-  export type refresh_tokenUpdateInput = {
+  export type zoom_refresh_tokenUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     refresh_token?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type refresh_tokenUncheckedUpdateInput = {
+  export type zoom_refresh_tokenUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     refresh_token?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type refresh_tokenCreateManyInput = {
+  export type zoom_refresh_tokenCreateManyInput = {
     id?: string
     refresh_token: string
     created_at?: Date | string
   }
 
-  export type refresh_tokenUpdateManyMutationInput = {
+  export type zoom_refresh_tokenUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     refresh_token?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type refresh_tokenUncheckedUpdateManyInput = {
+  export type zoom_refresh_tokenUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     refresh_token?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -4605,19 +4605,19 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type refresh_tokenCountOrderByAggregateInput = {
+  export type zoom_refresh_tokenCountOrderByAggregateInput = {
     id?: SortOrder
     refresh_token?: SortOrder
     created_at?: SortOrder
   }
 
-  export type refresh_tokenMaxOrderByAggregateInput = {
+  export type zoom_refresh_tokenMaxOrderByAggregateInput = {
     id?: SortOrder
     refresh_token?: SortOrder
     created_at?: SortOrder
   }
 
-  export type refresh_tokenMinOrderByAggregateInput = {
+  export type zoom_refresh_tokenMinOrderByAggregateInput = {
     id?: SortOrder
     refresh_token?: SortOrder
     created_at?: SortOrder
